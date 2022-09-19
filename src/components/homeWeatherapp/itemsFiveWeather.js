@@ -1,6 +1,6 @@
 import { Stack, Typography } from '@mui/material';
 import { useContext } from 'react'
-import { contexto } from './context';
+import { contexto } from '../context/index';
 
 export const ItemsFiveWeather = () => {
   const { fiveData } = useContext(contexto)

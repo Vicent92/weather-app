@@ -1,22 +1,12 @@
 import { Stack, Typography, Button, IconButton } from '@mui/material';
 import WbSunnyIcon from '@mui/icons-material/WbSunny';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import { useNavigate } from 'react-router-dom'
-import { useRender } from '../hooks/useRender';
+import { useRender } from '../../hooks/useRender';
+import { useIconToggle } from '../../hooks/useIconToggle';
 
 export const TitleWeather = () => {
-  const navigate = useNavigate()
-  const { render, handleTrue, handleFalse } = useRender(false)
-
-  const linkAddWtr = () => {
-    navigate('addweather')
-    handleTrue()
-  }
-
-  const linkWtrApp = () => {
-    navigate('/')
-    handleFalse()
-  }
+  const { render, handleTrue, handleFalse } = useRender(false);
+  const { linkAddWtr, linkWtrApp } = useIconToggle(handleTrue, handleFalse);
 
   return (
     <Stack
@@ -31,24 +21,24 @@ export const TitleWeather = () => {
         marginRight: '30px',
       }}
     >
-      {
-        !render
-        ?<Button
-        variant="outlined"
-        color="primary"
-        sx={{
-          height: '30px',
-          width: '1px',
-          borderRadius: '50px',
-        }}
-        onClick={linkAddWtr}
-      >
-        Add
-      </Button>
-      :<IconButton onClick={linkWtrApp}>
-          <ArrowBackIcon/>
-      </IconButton>
-      }
+      {!render ? (
+        <Button
+          variant="outlined"
+          color="primary"
+          sx={{
+            height: '30px',
+            width: '1px',
+            borderRadius: '50px',
+          }}
+          onClick={linkAddWtr}
+        >
+          Add
+        </Button>
+      ) : (
+        <IconButton onClick={linkWtrApp}>
+          <ArrowBackIcon />
+        </IconButton>
+      )}
 
       <Stack
         sx={{

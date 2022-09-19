@@ -1,7 +1,7 @@
 import './App.css';
-import { WeatherApp } from './components/weather.app';
+import { WeatherApp } from './components/homeWeatherapp/weather.app';
 import { useContext } from 'react';
-import { TitleWeather } from './components/titleWeather';
+import { TitleWeather } from './components/homeWeatherapp/titleWeather';
 import { Routes, Route } from 'react-router-dom';
 import { AddWeather } from './components/addWeather/addWeather';
 import { contexto } from './components/context';

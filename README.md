@@ -39,32 +39,33 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+# En la descripcion previa, pueden ver los diferentes scripts para ejecutar en consola.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Descripcion de como se utiliza la app
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Al iniciar el proyecto podran ver de una ves la temperatura de su posicion geografica, y la temperatura de los 5 dias posteriores.
 
-### Code Splitting
+Veran un select donde ya estan pre cargados 5 ciudades, al seleccionar cualquiera podra ver la temperatura en esa licalidad.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Del lado derecho de la pantalla, hay un boton que te lleva a otra pantalla donde podran agregar mas ciudades. Al agregarlas va aparecer un pequeño rectangulo con la informacion de la misma, si le dan click, te llevara de nuevo al inicio, pero con la informacion de la ciudad que seleccionaste. En el caso de que estes en la pantalla de agregar una ciudad y solo quieras regregar a la pantalla de inicio, hay un icono de atras en el lado superior izquierdo de la pantalla.
 
-### Analyzing the Bundle Size
+## Estructura de proyecto.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Hablare de como esta constituido el codigo fuente.
+Todo el codigo esta dentro de una carpeta 'src' luego encontraran una carpeta 'components', dentro de esta, hay tres carpetas, que son: 
 
-### Making a Progressive Web App
+'addWeather': Estan los componentes correspodiente a la pantalla de agregar mas ciudades.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+'homeWeayherApp': Son los componentes de la pantalla principal de app.
 
-### Advanced Configuration
+'selectFormWeather': Esta el componente del select donde estan las ciudades pre establecidas.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Tambien esta la carpeta 'context' donde haga uso de un contexto global para distribuir los estados.
 
-### Deployment
+Luego podran ver la carpeta 'hooks' que tiene distintos hooks que los utilize para extraer la logica de los componentes.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Quiero aclarar que utilize la libreria de material ui, que me facilito el maquetado y los estilos. Asi me pude enfocar mas en la logica.
 
-### `npm run build` fails to minify
+## Aclaracion
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Los iconos de la api de openWeather me ocasiono problemas, porque me aparecian rotas. No pude resolver eso.**

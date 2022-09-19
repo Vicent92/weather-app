@@ -2,12 +2,11 @@ import { Stack, Typography, Paper } from '@mui/material';
 import { FiveWeather } from './fiveWeather';
 import { ItemsFiveWeather } from './itemsFiveWeather';
 import { useContext } from 'react'
-import { contexto } from './context';
-import { SelectFormWeather } from './selectFormWeather/selectFormWeather';
+import { contexto } from '../context/index';
+import { SelectFormWeather } from '../selectFormWeather/selectFormWeather';
 
 export const WeatherApp = () => {
   const { data, isLoading2 } = useContext(contexto)
-  // const icon = ``
 
   return (
     <>
