@@ -4,6 +4,7 @@
   flex-direction: column;
   align-items: center;
   background-color: rgb(70, 68, 68);
+  background-image: linear-gradient(to bottom, #061427, #142449, #32326b, #593d8a, #8844a4);
   width: 100%;
   min-height: 100vh;
 }

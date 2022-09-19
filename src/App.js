@@ -1,30 +1,40 @@
 import './App.css';
 import { WeatherApp } from './components/weather.app';
-import { useState, useEffect } from 'react'
+import { useContext } from 'react';
 import { TitleWeather } from './components/titleWeather';
+import { Routes, Route } from 'react-router-dom';
+import { AddWeather } from './components/addWeather/addWeather';
+import { contexto } from './components/context';
 
 function App() {
-const [data, setData] = useState([])
-const [isLoading, setIsLoading] = useState(false)
-
-  useEffect(() => {
-    const url = 'https://api.openweathermap.org/data/2.5/weather?appid=3968d4053f61c5c59e7a254eb8c2680b&units=metric&lang=sp&q=santiago'
-    fetch(url)
-    .then(res => res.json())
-    .then(json => {
-      setData(json)
-      setIsLoading(true)
-    })
-  }, [])
-  console.log(data)
+  const { isLoading } = useContext(contexto)
 
   return (
     <div className="App">
 
-        <TitleWeather/>
+      <TitleWeather />
 
-        {isLoading ? <WeatherApp data={data}/> : ''}
+      <Routes>
+        <Route
+          path="/"
+          element={
+            isLoading ? (
+              <WeatherApp
+              />
+            ) : (
+              ''
+            )
+          }
+        />
 
+        <Route
+          path="addweather"
+          element={
+            <AddWeather
+            />
+          }
+        />
+      </Routes>
     </div>
   );
 }

@@ -1,57 +1,86 @@
-import { Stack, Typography, Button } from '@mui/material'
-import WbSunnyIcon from '@mui/icons-material/WbSunny';
+import { Stack, Typography, Paper } from '@mui/material';
+import { FiveWeather } from './fiveWeather';
+import { ItemsFiveWeather } from './itemsFiveWeather';
+import { useContext } from 'react'
+import { contexto } from './context';
+import { SelectFormWeather } from './selectFormWeather';
 
-export const WeatherApp = ({ data }) => {
-
+export const WeatherApp = () => {
+  const { data, isLoading2 } = useContext(contexto)
+  // const icon = ``
 
   return (
-    <Stack
-      direction='column'
-      sx={{
-        width: '300px',
-        height: '400px',
-        // backgroundColor: 'red',
-        marginTop: '60px'
-      }}
-    >
-
-      <Stack
+    <>
+    <SelectFormWeather/>
+      <Paper
         sx={{
-          width: '100%',
-          height: '50px',
-          // backgroundColor: 'green',
-          justifyContent: 'center',
-          alignItems: 'center'
+          width: '300px',
+          height: '350px',
+          backgroundImage:
+            'linear-gradient(to bottom, #061427, #142449, #32326b, #593d8a, #8844a4)',
+          marginTop: '60px',
+          borderRadius: '30px',
         }}
       >
-        <Typography variant='h5'>
-          {data.name}
-        </Typography>
+        <Stack
+          direction="column"
+          sx={{
+            width: '100%',
+            height: '100%',
+          }}
+        >
+          <Stack
+            sx={{
+              width: '100%',
+              height: '50px',
+              // backgroundColor: 'green',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
+          >
+            <Typography
+              variant="h5"
+              sx={{
+                color: 'white',
+              }}
+            >
+              {data.name}
+            </Typography>
+          </Stack>
 
-      </Stack>
+          <Stack
+            sx={{
+              width: '100%',
+              height: '250px',
+              // backgroundColor: 'blue',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
+          >
+            <Typography
+              variant="h1"
+              sx={{
+                color: 'white',
+              }}
+            >
+              {data.main.temp.toFixed(1)}°C
+            </Typography>
 
-      <Stack
-        sx={{
-          width: '100%',
-          height: '250px',
-          // backgroundColor: 'blue',
-          justifyContent: 'center',
-          alignItems: 'center'
-        }}
-      >
-        <Typography variant='h1'>
-          {data.main.temp}
-        </Typography>
-
-        <Stack>
-          Icono
+            {
+              data.weather.map(el => {
+                const icon = el.icon+"png"
+                return <Stack>
+                          <img src={icon}/>
+                       </Stack>
+              })
+            }
+          </Stack>
         </Stack>
+      </Paper>
 
-      </Stack>
-
-
-
-
-    </Stack>
-  )
-}
+      <FiveWeather>
+        {isLoading2 ? <ItemsFiveWeather/> : ''}
+      </FiveWeather>
+    </>
+  );
+};
