@@ -16,7 +16,7 @@ export const WeatherApp = () => {
           width: '300px',
           height: '350px',
           backgroundColor: '#bae8e8',
-          marginTop: '60px',
+          marginTop: '30px',
           borderRadius: '30px',
         }}
       >
@@ -66,6 +66,17 @@ export const WeatherApp = () => {
           </Stack>
         </Stack>
       </Paper>
+
+      <Typography
+        variant='h5'
+        sx={{
+          marginTop: '30px',
+          marginBottom: '-10px',
+          color: '#272343'
+        }}
+      >
+        Prevision para 5 dias
+      </Typography>
 
       <FiveWeather>
         {isLoading2 ? <ItemsFiveWeather/> : ''}

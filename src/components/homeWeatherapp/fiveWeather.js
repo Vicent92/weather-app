@@ -5,7 +5,7 @@ export const FiveWeather = ({ children }) => {
     <Stack
       direction="row"
       sx={{
-        width: '70%',
+        width: '90%',
         height: '70px',
         marginTop: '30px',
         // background: 'red',
