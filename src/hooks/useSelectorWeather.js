@@ -6,7 +6,7 @@ export const useSelectorWeather = (setData, setFiveData, dataAdd) => {
   const selectWeather = async (id) => {
     const findWeather = dataAdd.find(el => el.sys.id === id)
     const url =
-      `https://api.openweathermap.org/data/2.5/forecast?appid=3968d4053f61c5c59e7a254eb8c2680b&units=metric&lang=sp&q=${findWeather.name}`;
+      `https://api.openweathermap.org/data/2.5/forecast?appid=cd50fe9b57bf2848e2b637a835ab1910&units=metric&lang=sp&q=${findWeather.name}`;
     fetch(url)
     .then(res => res.json())
     .then(json => {

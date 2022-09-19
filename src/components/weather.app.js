@@ -3,7 +3,7 @@ import { FiveWeather } from './fiveWeather';
 import { ItemsFiveWeather } from './itemsFiveWeather';
 import { useContext } from 'react'
 import { contexto } from './context';
-import { SelectFormWeather } from './selectFormWeather';
+import { SelectFormWeather } from './selectFormWeather/selectFormWeather';
 
 export const WeatherApp = () => {
   const { data, isLoading2 } = useContext(contexto)
@@ -16,8 +16,7 @@ export const WeatherApp = () => {
         sx={{
           width: '300px',
           height: '350px',
-          backgroundImage:
-            'linear-gradient(to bottom, #061427, #142449, #32326b, #593d8a, #8844a4)',
+          backgroundColor: '#bae8e8',
           marginTop: '60px',
           borderRadius: '30px',
         }}
@@ -41,7 +40,7 @@ export const WeatherApp = () => {
             <Typography
               variant="h5"
               sx={{
-                color: 'white',
+                color: '#272343',
               }}
             >
               {data.name}
@@ -60,20 +59,11 @@ export const WeatherApp = () => {
             <Typography
               variant="h1"
               sx={{
-                color: 'white',
+                color: '#272343',
               }}
             >
               {data.main.temp.toFixed(1)}°C
             </Typography>
-
-            {
-              data.weather.map(el => {
-                const icon = el.icon+"png"
-                return <Stack>
-                          <img src={icon}/>
-                       </Stack>
-              })
-            }
           </Stack>
         </Stack>
       </Paper>

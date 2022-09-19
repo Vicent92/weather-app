@@ -1,12 +1,21 @@
-import { Stack, Typography, Button } from '@mui/material';
+import { Stack, Typography, Button, IconButton } from '@mui/material';
 import WbSunnyIcon from '@mui/icons-material/WbSunny';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { useNavigate } from 'react-router-dom'
+import { useRender } from '../hooks/useRender';
 
 export const TitleWeather = () => {
   const navigate = useNavigate()
+  const { render, handleTrue, handleFalse } = useRender(false)
 
   const linkAddWtr = () => {
     navigate('addweather')
+    handleTrue()
+  }
+
+  const linkWtrApp = () => {
+    navigate('/')
+    handleFalse()
   }
 
   return (
@@ -22,7 +31,9 @@ export const TitleWeather = () => {
         marginRight: '30px',
       }}
     >
-      <Button
+      {
+        !render
+        ?<Button
         variant="outlined"
         color="primary"
         sx={{
@@ -34,6 +45,10 @@ export const TitleWeather = () => {
       >
         Add
       </Button>
+      :<IconButton onClick={linkWtrApp}>
+          <ArrowBackIcon/>
+      </IconButton>
+      }
 
       <Stack
         sx={{
@@ -45,7 +60,7 @@ export const TitleWeather = () => {
         <Typography
           variant="h6"
           sx={{
-            color: 'white',
+            color: '#272343',
           }}
         >
           WeatherApp

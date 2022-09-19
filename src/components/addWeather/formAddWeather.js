@@ -12,7 +12,7 @@ export const FormAddWeather = () => {
     <Stack
       direction="row"
       sx={{
-        width: '30%',
+        width: '320px',
         // background: 'red',
         justifyContent: 'center',
         alignItems: 'center',

@@ -12,7 +12,7 @@ export const ItemAddWeather = () => {
     <Stack
       direction="column"
       sx={{
-        width: '30%',
+        width: '350px',
         // background: 'red',
         marginTop: '20px',
         justifyContent: 'space-around',
@@ -26,7 +26,7 @@ export const ItemAddWeather = () => {
               width: '70%',
               height: '50px',
               marginTop: '10px',
-              backgroundColor: 'blue',
+              backgroundColor: '#bae8e8',
               cursor: 'pointer'
             }}
             onClick={() => selectWeather(el.sys.id)}
@@ -40,9 +40,9 @@ export const ItemAddWeather = () => {
                 alignItems: 'center',
               }}
             >
-              <Typography>{el.name}</Typography>
+              <Typography variant='h6' sx={{color: '#272343'}}>{el.name}</Typography>
 
-              <Typography>{el.main.temp.toFixed(1)} °C</Typography>
+              <Typography variant='h6' sx={{color: '#272343'}}>{el.main.temp.toFixed(1)} °C</Typography>
             </Stack>
           </Paper>
         );

@@ -10,7 +10,7 @@ export const useSubmitWeather = (setDataAdd) => {
 
   const handleSubmit = async () => {
     const valueLowerCase = value.toLocaleLowerCase();
-    const url = `https://api.openweathermap.org/data/2.5/weather?appid=3968d4053f61c5c59e7a254eb8c2680b&units=metric&lang=sp&q=${valueLowerCase}`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?appid=cd50fe9b57bf2848e2b637a835ab1910&units=metric&lang=sp&q=${valueLowerCase}`;
     const data = await fetch(url);
     const json = await data.json();
 
