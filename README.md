@@ -52,20 +52,24 @@ Del lado derecho de la pantalla, hay un boton que te lleva a otra pantalla donde
 ## Estructura de proyecto.
 
 Hablare de como esta constituido el codigo fuente.
-Todo el codigo esta dentro de una carpeta 'src' luego encontraran una carpeta 'components', dentro de esta, hay tres carpetas, que son: 
+Todo el codigo esta dentro de una carpeta `src` luego encontraran una carpeta `components`, dentro de esta, hay tres carpetas, que son: 
 
-'addWeather': Estan los componentes correspodiente a la pantalla de agregar mas ciudades.
+`addWeather`: Estan los componentes correspodiente a la pantalla de agregar mas ciudades.
 
-'homeWeayherApp': Son los componentes de la pantalla principal de app.
+`homeWeayherApp`: Son los componentes de la pantalla principal de app.
 
-'selectFormWeather': Esta el componente del select donde estan las ciudades pre establecidas.
+`selectFormWeather`: Esta el componente del select donde estan las ciudades pre establecidas.
 
-Tambien esta la carpeta 'context' donde haga uso de un contexto global para distribuir los estados.
+Tambien esta la carpeta `context` donde haga uso de un contexto global para distribuir los estados.
 
-Luego podran ver la carpeta 'hooks' que tiene distintos hooks que los utilize para extraer la logica de los componentes.
+Luego podran ver la carpeta `hooks` que tiene distintos hooks que los utilize para extraer la logica de los componentes.
 
 Quiero aclarar que utilize la libreria de material ui, que me facilito el maquetado y los estilos. Asi me pude enfocar mas en la logica.
 
 ## Aclaracion
 
 **Los iconos de la api de openWeather me ocasiono problemas, porque me aparecian rotas. No pude resolver eso.**
+
+
+# DEPLOY
+Por ultimo, dejo el enlace al profecto deployado en vercel: https://weather-app-vicent92.vercel.app/
